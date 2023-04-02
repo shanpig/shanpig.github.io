@@ -17,6 +17,7 @@
 
 # misc
 .DS_Store
+.env
 .env.local*
 
 # debug
@@ -29,3 +30,4 @@ yarn-error.log*
 
 .now
 .vercel
+

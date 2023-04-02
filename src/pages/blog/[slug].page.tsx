@@ -112,6 +112,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       }
     }
   }, [])
+
   useEffect(() => {
     if (redirect && !post) {
       router.replace(redirect)
