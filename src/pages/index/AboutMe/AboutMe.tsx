@@ -5,13 +5,9 @@ import {
   ThunderboltOutlined,
 } from '@ant-design/icons'
 import { Card, Col, List, Row, Space } from 'antd'
+import SectionTitle from '../components/SectionTItle/SectionTitle'
 
-import {
-  StyledContent,
-  StyledDivider,
-  StyledIcon,
-  StyledTitle,
-} from './AboutMe.style'
+import { StyledContent, StyledIcon } from './AboutMe.style'
 
 const INTRO = [
   {
@@ -39,9 +35,7 @@ const AboutMe = () => {
   return (
     <Row>
       <Col xs={24} lg={{ span: 20, offset: 2 }} xl={{ span: 16, offset: 4 }}>
-        <StyledDivider>
-          <StyledTitle level={2}>About Me</StyledTitle>
-        </StyledDivider>
+        <SectionTitle>About Me</SectionTitle>
         <List
           grid={{ gutter: 16, column: 4 }}
           dataSource={INTRO}
