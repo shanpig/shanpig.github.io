@@ -14,4 +14,13 @@ export const StyledContent = styled(Typography.Paragraph)`
   margin: 0;
   text-align: center;
   font-size: 0.8rem;
+  max-width: 300px;
+`
+
+export const StyledCardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 `

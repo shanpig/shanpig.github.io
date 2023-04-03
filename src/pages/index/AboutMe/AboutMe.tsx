@@ -7,7 +7,7 @@ import {
 import { Card, Col, List, Row, Space } from 'antd'
 import SectionTitle from '../components/SectionTItle/SectionTitle'
 
-import { StyledContent, StyledIcon } from './AboutMe.style'
+import { StyledCardBody, StyledContent, StyledIcon } from './AboutMe.style'
 
 const INTRO = [
   {
@@ -37,15 +37,15 @@ const AboutMe = () => {
       <Col xs={24} lg={{ span: 20, offset: 2 }} xl={{ span: 16, offset: 4 }}>
         <SectionTitle>About Me</SectionTitle>
         <List
-          grid={{ gutter: 16, column: 4 }}
+          grid={{ gutter: 16, xs: 1, sm: 2, md: 2, lg: 4, xl: 4, xxl: 4 }}
           dataSource={INTRO}
           renderItem={({ icon, content }) => (
             <List.Item>
               <Card>
-                <Space direction="vertical" size={12} align="center">
+                <StyledCardBody>
                   <StyledIcon>{icon}</StyledIcon>
                   <StyledContent>{content}</StyledContent>
-                </Space>
+                </StyledCardBody>
               </Card>
             </List.Item>
           )}
