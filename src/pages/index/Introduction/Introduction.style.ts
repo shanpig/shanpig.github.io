@@ -7,5 +7,8 @@ export const StyledCol = styled(Col)`
 `
 
 export const StyledTitle = styled(Typography.Title)`
-  text-align: center;
+  &&& {
+    margin-bottom: 0;
+    text-align: center;
+  }
 `
