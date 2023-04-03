@@ -13,6 +13,7 @@
     "styled-components": "^5"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@zeit/react-jsx-parser": "2.0.0",
     "antd": "^5.3.3",
     "async-sema": "3.1.0",
