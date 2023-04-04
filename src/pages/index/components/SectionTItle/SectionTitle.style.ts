@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const StyledDivider = styled(Divider)`
   &&& {
-    margin-bottom: 48px;
+    margin: 48px 0;
 
     ::before,
     ::after {
