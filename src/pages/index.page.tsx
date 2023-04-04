@@ -1,4 +1,4 @@
-import Header from '../components/header'
+import Header from '../components/Header/Header'
 import Introduction from './index/Introduction/Introduction'
 import AboutMe from './index/AboutMe/AboutMe'
 import TechStack from './TechStack/TechStack'
