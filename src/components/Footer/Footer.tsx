@@ -3,7 +3,7 @@ import {
   LinkedinOutlined,
   MailOutlined,
 } from '@ant-design/icons'
-import { Tooltip, Typography } from 'antd'
+import { Tooltip, message, notification } from 'antd'
 import {
   StyledAvatar,
   StyledFooter,
@@ -12,17 +12,23 @@ import {
 } from './Footer.style'
 
 const Footer = () => {
+  const copyEmailToClipboard = () => {
+    navigator.clipboard.writeText('shanpigLiao@gmail.com')
+
+    notification.success({
+      placement: 'bottomLeft',
+      message: 'Email copied to clipboard!',
+      description: 'shanpigLiao@gmail.com',
+    })
+  }
+
   return (
     <StyledFooter>
       <StyledIconWrapper>
         <Tooltip title="shanpigLiao@gmail.com">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="mailto:shanpigLiao@gmail.com"
-          >
+          <div onClick={copyEmailToClipboard}>
             <StyledAvatar icon={<MailOutlined />} />
-          </a>
+          </div>
         </Tooltip>
         <Tooltip title="linkedin">
           <a
