@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 export const StyledFooter = styled.div`
   background: rgb(0 0 0 / 0.85);
-  margin-top: 84px;
   min-height: 300px;
+  margin-top: auto;
   padding: 60px;
 `
 
