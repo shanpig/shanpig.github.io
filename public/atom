@@ -4,13 +4,13 @@
     <subtitle>Blog</subtitle>
     <link href="/atom" rel="self" type="application/rss+xml"/>
     <link href="/" />
-    <updated>2023-04-05T09:55:47.121Z</updated>
+    <updated>2023-04-05T10:04:06.596Z</updated>
     <id>My Notion Blog</id>
     <entry>
       <id>/blog/asdf</id>
       <title>asdf</title>
       <link href="/blog/asdf"/>
-      <updated>2023-04-04T16:00:00.828Z</updated>
+      <updated>2023-04-04T16:00:00.343Z</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
           
