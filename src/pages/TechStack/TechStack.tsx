@@ -1,6 +1,5 @@
 import SectionTitle from '../index/components/SectionTItle/SectionTitle'
-import Image from 'next/image'
-import { Col, Row, Space, Tooltip } from 'antd'
+import { Col, Row, Tooltip } from 'antd'
 import { StyledImage, StyledLogos } from './TechStack.style'
 
 const LOGOS = [
@@ -23,7 +22,7 @@ const TechStack = () => {
         <SectionTitle>Tech Stack</SectionTitle>
         <StyledLogos>
           {LOGOS.map(({ title, logo }) => (
-            <Tooltip title={title}>
+            <Tooltip title={title} key={title}>
               <StyledImage
                 key={logo}
                 src={logo}

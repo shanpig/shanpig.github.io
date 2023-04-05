@@ -10,11 +10,11 @@ import {
 
 const { Panel } = Collapse
 
-const ExperienceCard = ({ key, company, role, startAt, endAt }) => {
+const ExperienceCard = ({ panelKey, company, role, startAt, endAt }) => {
   return (
     <StyledCollapse ghost expandIcon={() => <></>}>
       <Panel
-        key={key}
+        key={panelKey}
         header={
           <StyledHeader>
             <StyledTitle level={4}>{company}</StyledTitle>
@@ -27,9 +27,7 @@ const ExperienceCard = ({ key, company, role, startAt, endAt }) => {
       >
         <StyledList>
           {ACHIEVEMENTS[company].map((achievement) => (
-            <StyledListItem>
-              <>{achievement}</>
-            </StyledListItem>
+            <StyledListItem key={achievement}>{achievement}</StyledListItem>
           ))}
         </StyledList>
       </Panel>

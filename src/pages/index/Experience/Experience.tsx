@@ -16,7 +16,7 @@ const Experience = () => {
             const key = `${experience.company}${experience.role}`
 
             return {
-              children: <ExperienceCard key={key} {...experience} />,
+              children: <ExperienceCard panelKey={key} {...experience} />,
             }
           })}
         />
