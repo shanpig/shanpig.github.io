@@ -17,7 +17,7 @@ const Portfolio = () => {
         <SectionTitle>Portfolio</SectionTitle>
         <Row gutter={[24, 24]}>
           {PORTFOLIO_ITEMS.map(({ title, url, description, coverImage }) => (
-            <Col span={8} key={title}>
+            <Col xs={24} sm={12} md={8} xl={6} key={title}>
               <StyledLink target="_blank" rel="noreferrer noopener" href={url}>
                 <StyledCard
                   cover={
@@ -38,7 +38,7 @@ const Portfolio = () => {
         <SectionTitle>Tech Talks</SectionTitle>
         <Row gutter={[24, 24]}>
           {TECH_TALKS.map(({ title, url, coverImage }) => (
-            <Col span={8} key={title}>
+            <Col xs={24} sm={12} md={8} xl={6} key={title}>
               <StyledLink target="_blank" rel="noreferrer noopener" href={url}>
                 <StyledCard
                   cover={
