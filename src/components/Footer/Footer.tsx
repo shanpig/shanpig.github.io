@@ -3,7 +3,7 @@ import {
   LinkedinOutlined,
   MailOutlined,
 } from '@ant-design/icons'
-import { Tooltip, message, notification } from 'antd'
+import { Tooltip, notification } from 'antd'
 import {
   StyledAvatar,
   StyledFooter,
