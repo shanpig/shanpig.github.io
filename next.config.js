@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+
 const {
   NOTION_TOKEN,
   BLOG_INDEX_ID,
@@ -42,19 +43,21 @@ if (!BLOG_INDEX_ID) {
 }
 
 module.exports = {
-  webpack(cfg, { dev, isServer }) {
+  webpack(cfg, { dev, isServer, webpack }) {
     // only compile build-rss in production server build
     if (dev || !isServer) return cfg
 
     // we're in build mode so enable shared caching for Notion data
     process.env.USE_CACHE = 'true'
 
-    const originalEntry = cfg.entry
-    cfg.entry = async () => {
-      const entries = { ...(await originalEntry()) }
-      entries['build-rss.js'] = './src/lib/build-rss.ts'
-      return entries
-    }
+    // TODO: 還不需要 RSS，這個會讓 build 失敗，先註解掉
+    // const originalEntry = cfg.entry
+    // cfg.entry = async () => {
+    //   const entries = { ...(await originalEntry()) }
+    //   entries['build-rss.js'] = './src/lib/build-rss.ts'
+    //   return entries
+    // }
+
     return cfg
   },
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
