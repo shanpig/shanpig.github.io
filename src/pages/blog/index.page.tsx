@@ -3,15 +3,12 @@ import Link from 'next/link'
 import blogStyles from '../../styles/blog.module.css'
 import sharedStyles from '../../styles/shared.module.css'
 
-import {
-  getBlogLink,
-  getDateStr,
-  postIsPublished,
-} from '../../lib/blog-helpers'
-import { textBlock } from '../../lib/notion/renderers'
+import { postIsPublished } from '../../lib/blog-helpers'
+
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import { Empty } from 'antd'
+import Post from './components/Post/Post'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -71,35 +68,9 @@ const Index = ({ posts = [], preview }) => {
             ></Empty>
           </p>
         )}
-        {posts.map((post) => {
-          return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
-              <h3>
-                <span className={blogStyles.titleContainer}>
-                  {!post.Published && (
-                    <span className={blogStyles.draftBadge}>Draft</span>
-                  )}
-                  <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                    <a>{post.Page}</a>
-                  </Link>
-                </span>
-              </h3>
-              {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
-              )}
-              {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
-              )}
-              <p>
-                {(!post.preview || post.preview.length === 0) &&
-                  'No preview available'}
-                {(post.preview || []).map((block, idx) =>
-                  textBlock(block, true, `${post.Slug}${idx}`)
-                )}
-              </p>
-            </div>
-          )
-        })}
+        {posts.map((post) => (
+          <Post post={post} />
+        ))}
       </div>
     </>
   )
