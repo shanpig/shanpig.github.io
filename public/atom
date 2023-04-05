@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <title>My Blog</title>
+    <subtitle>Blog</subtitle>
+    <link href="/atom" rel="self" type="application/rss+xml"/>
+    <link href="/" />
+    <updated>2023-04-05T09:55:47.121Z</updated>
+    <id>My Notion Blog</id>
+    <entry>
+      <id>/blog/asdf</id>
+      <title>asdf</title>
+      <link href="/blog/asdf"/>
+      <updated>2023-04-04T16:00:00.828Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          
+          <p class="more">
+            <a href="/blog/asdf">Read more</a>
+          </p>
+        </div>
+      </content>
+      <author><name>豬 山</name></author>
+    </entry>
+  </feed>
