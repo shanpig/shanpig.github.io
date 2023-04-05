@@ -1,4 +1,4 @@
-import SectionTitle from '../index/components/SectionTItle/SectionTitle'
+import SectionTitle from '../components/SectionTItle/SectionTitle'
 import { Col, Row, Tooltip } from 'antd'
 import { StyledImage, StyledLogos } from './TechStack.style'
 
