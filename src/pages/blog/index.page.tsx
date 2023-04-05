@@ -11,6 +11,7 @@ import {
 import { textBlock } from '../../lib/notion/renderers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
+import { Empty } from 'antd'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -63,7 +64,12 @@ const Index = ({ posts = [], preview }) => {
       <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
         <h1>My Notion Blog</h1>
         {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
+          <p className={blogStyles.noPosts}>
+            <Empty
+              description="There are no posts yet"
+              image={Empty.PRESENTED_IMAGE_DEFAULT}
+            ></Empty>
+          </p>
         )}
         {posts.map((post) => {
           return (
