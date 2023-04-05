@@ -16,17 +16,29 @@ const Footer = () => {
     <StyledFooter>
       <StyledIconWrapper>
         <Tooltip title="shanpigLiao@gmail.com">
-          <a href="mailto:shanpigLiao@gmail.com">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:shanpigLiao@gmail.com"
+          >
             <StyledAvatar icon={<MailOutlined />} />
           </a>
         </Tooltip>
         <Tooltip title="linkedin">
-          <a href="https://www.linkedin.com/in/shanpig/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/shanpig/"
+          >
             <StyledAvatar icon={<LinkedinOutlined />} />
           </a>
         </Tooltip>
         <Tooltip title="github">
-          <a href="https://github.com/shanpig">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/shanpig"
+          >
             <StyledAvatar icon={<GithubOutlined />} />
           </a>
         </Tooltip>
