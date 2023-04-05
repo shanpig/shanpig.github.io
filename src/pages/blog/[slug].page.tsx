@@ -21,6 +21,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
   // if we can't find the post or if it is unpublished and
   // viewed without preview mode then we just redirect to /blog
   if (!post || (post.Published !== 'Yes' && !preview)) {
+    // eslint-disable-next-line no-console
     console.log(`Failed to find post for slug: ${slug}`)
     return {
       props: {
@@ -47,9 +48,11 @@ export async function getStaticProps({ params: { slug }, preview }) {
           `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
         )
         const json = await res.json()
-        properties.html = json.html.split('<script')[0]
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        properties.html = (json as any).html.split('<script')[0]
         post.hasTweet = true
       } catch (_) {
+        // eslint-disable-next-line no-console
         console.log(`Failed to get tweet embed for ${src}`)
       }
     }
@@ -101,8 +104,10 @@ const RenderPost = ({ post, redirect, preview }) => {
     // make sure to initialize any new widgets loading on
     // client navigation
     if (post && post.hasTweet) {
-      if ((window as any)?.twttr?.widgets) {
-        ;(window as any).twttr.widgets.load()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const twttrWidgets = (window as any)?.twttr?.widgets
+      if (twttrWidgets) {
+        twttrWidgets.load()
       } else if (!document.querySelector(`script[src="${twitterSrc}"]`)) {
         const script = document.createElement('script')
         script.async = true
@@ -169,7 +174,7 @@ const RenderPost = ({ post, redirect, preview }) => {
           const { type, properties, id, parent_id } = value
           const isLast = blockIdx === post.content.length - 1
           const isList = listTypes.has(type)
-          let toRender = []
+          const toRender = []
 
           if (isList) {
             listTagName = components[type === 'bulleted_list' ? 'ul' : 'ol']
@@ -191,6 +196,7 @@ const RenderPost = ({ post, redirect, preview }) => {
             toRender.push(
               React.createElement(
                 listTagName,
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 { key: listLastId! },
                 Object.keys(listMap).map((itemId) => {
                   if (listMap[itemId].isNested) return null
@@ -345,6 +351,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                   <Comp
                     key={!useWrapper ? id : undefined}
                     src={`/api/asset?assetUrl=${encodeURIComponent(
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       display_source as any
                     )}&blockId=${id}`}
                     controls={!isImage}
@@ -384,11 +391,12 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'sub_sub_header':
               renderHeading('h3')
               break
-            case 'bookmark':
+            case 'bookmark': {
               const { link, title, description } = properties
               const { format = {} } = value
               renderBookmark({ link, title, description, format })
               break
+            }
             case 'code': {
               if (properties.title) {
                 const content = properties.title[0][0]
@@ -409,6 +417,9 @@ const RenderPost = ({ post, redirect, preview }) => {
                   )
                 } else {
                   toRender.push(
+                    // FIXME: 應該把這個處理掉
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore: this error is not yet understood
                     <components.Code key={id} language={language || ''}>
                       {content}
                     </components.Code>
@@ -457,6 +468,9 @@ const RenderPost = ({ post, redirect, preview }) => {
               if (properties && properties.title) {
                 const content = properties.title[0][0]
                 toRender.push(
+                  // FIXME: 應該把這個處理掉
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-ignore: this error is not yet understood
                   <components.Equation key={id} displayMode={true}>
                     {content}
                   </components.Equation>
@@ -469,6 +483,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                 process.env.NODE_ENV !== 'production' &&
                 !listTypes.has(type)
               ) {
+                // eslint-disable-next-line no-console
                 console.log('unknown type', type)
               }
               break

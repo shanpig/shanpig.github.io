@@ -4,7 +4,7 @@ import {
   MessageOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons'
-import { Card, Col, List, Row, Space } from 'antd'
+import { Card, Col, List, Row } from 'antd'
 import SectionTitle from '../components/SectionTItle/SectionTitle'
 
 import { StyledCardBody, StyledContent, StyledIcon } from './AboutMe.style'

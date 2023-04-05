@@ -9,6 +9,7 @@ function render(expression: string, displayMode: boolean): string {
       result = e.message
     }
     if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
       console.error(e)
     }
   }

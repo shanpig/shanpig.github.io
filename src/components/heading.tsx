@@ -7,9 +7,10 @@ const collectText = (el, acc = []) => {
   return acc.join('').trim()
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Heading = ({ children: component, id }: { children: any; id?: any }) => {
   const children = component.props.children || ''
-  let text = children
+  const text = children
 
   if (null == id) {
     id = collectText(text)

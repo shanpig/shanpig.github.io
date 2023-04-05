@@ -1,4 +1,4 @@
-import { Avatar, Row, Space, Typography } from 'antd'
+import { Avatar, Row, Space } from 'antd'
 import { TypeAnimation } from 'react-type-animation'
 import { StyledCol, StyledTitle } from './Introduction.style'
 

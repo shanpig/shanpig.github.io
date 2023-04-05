@@ -14,6 +14,7 @@ export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
 
   const authorsToGet: Set<string> = new Set()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const posts: any[] = Object.keys(postsTable)
     .map((slug) => {
       const post = postsTable[slug]

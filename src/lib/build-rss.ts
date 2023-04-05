@@ -107,7 +107,9 @@ async function main() {
 
   const outputPath = './public/atom'
   await writeFile(resolve(outputPath), createRSS(blogPosts))
+  // eslint-disable-next-line no-console
   console.log(`Atom feed file generated at \`${outputPath}\``)
 }
 
+// eslint-disable-next-line no-console
 main().catch((error) => console.error(error))
