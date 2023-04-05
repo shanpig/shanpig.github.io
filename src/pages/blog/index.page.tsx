@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Header from '../../components/Header/Header'
 
 import blogStyles from '../../styles/blog.module.css'
 import sharedStyles from '../../styles/shared.module.css'
@@ -50,7 +49,6 @@ export async function getStaticProps({ preview }) {
 const Index = ({ posts = [], preview }) => {
   return (
     <>
-      <Header titlePre="Blog" />
       {preview && (
         <div className={blogStyles.previewAlertContainer}>
           <div className={blogStyles.previewAlert}>

@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { StyledHeader, StyledLink } from './Header.style'
 
-const navItems: { label: string; page?: string; link?: string }[] = [
-  { label: 'Home', page: '/' },
-  { label: 'Blog', page: '/blog' },
-]
+const navItems = {
+  '/': 'Home',
+  '/blog': 'Blog',
+}
 
-const Header = ({ titlePre = '' }) => {
+const Header = () => {
   const { pathname } = useRouter()
+  const titlePre = navItems[pathname]
 
   return (
     <header>
@@ -26,7 +27,7 @@ const Header = ({ titlePre = '' }) => {
       <StyledHeader>
         <Tabs
           type="card"
-          items={navItems.map(({ label, page }) => ({
+          items={Object.entries(navItems).map(([page, label]) => ({
             label: (
               <Link key={label} href={page}>
                 <StyledLink>{label}</StyledLink>
