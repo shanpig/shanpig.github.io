@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { StyledHeader, StyledLink } from './Header.style'
+import Script from 'next/script'
 
 const navItems = {
   '/': 'Home',
@@ -15,6 +16,21 @@ const Header = () => {
 
   return (
     <header>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        strategy="lazyOnload"
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      ></Script>
+      <Script strategy="lazyOnload">
+        {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+          `}
+      </Script>
       <Head>
         <title>{titlePre ? `${titlePre} |` : ''} Shanpig</title>
         <meta
