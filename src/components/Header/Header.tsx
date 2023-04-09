@@ -13,6 +13,7 @@ const navItems = {
 const Header = () => {
   const { pathname } = useRouter()
   const titlePre = navItems[pathname]
+  const titleText = titlePre ? `${titlePre} | Shanpig` : 'Shanpig'
 
   return (
     <header>
@@ -32,7 +33,7 @@ const Header = () => {
           `}
       </Script>
       <Head>
-        <title>{titlePre ? `${titlePre} |` : ''} Shanpig</title>
+        <title>{titleText}</title>
         <meta
           name="description"
           content="Accomplished Front End Web Developer with 1.5 years building B2B service platform with 100k+ users."
