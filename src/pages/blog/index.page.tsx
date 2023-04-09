@@ -9,6 +9,7 @@ import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import { Empty } from 'antd'
 import Post from './components/Post/Post'
+import { StyledPosts } from './index.style'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -69,9 +70,11 @@ const Index = ({ posts = [], preview }) => {
             ></Empty>
           </p>
         )}
-        {posts.map((post) => (
-          <Post post={post} />
-        ))}
+        <StyledPosts>
+          {posts.map((post) => (
+            <Post post={post} />
+          ))}
+        </StyledPosts>
       </div>
     </>
   )
