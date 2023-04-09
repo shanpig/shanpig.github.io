@@ -60,7 +60,7 @@ module.exports = {
 
     return cfg
   },
-  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js', 'ts', 'js'],
   typescript: {
     ignoreBuildErrors: true,
   },
