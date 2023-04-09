@@ -1,5 +1,5 @@
-import Prism from 'prismjs'
-import 'prismjs/components/prism-jsx'
+import hljs from 'highlight.js/lib/common'
+import 'highlight.js/styles/github.css'
 
 const Code = ({ children, language = 'javascript' }) => {
   return (
@@ -7,11 +7,9 @@ const Code = ({ children, language = 'javascript' }) => {
       <pre>
         <code
           dangerouslySetInnerHTML={{
-            __html: Prism.highlight(
-              children,
-              Prism.languages[language.toLowerCase()] ||
-                Prism.languages.javascript
-            ),
+            __html: hljs.highlight(children, {
+              language: language.toLowerCase() || 'javascript',
+            }).value,
           }}
         />
       </pre>
