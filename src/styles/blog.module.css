@@ -89,10 +89,13 @@
 .post :global(video),
 .post :global(img),
 .post :global(.asset-wrapper) {
-  margin: 2rem auto;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
   max-width: 100%;
   display: block;
+}
+
+.post :global(.asset-wrapper) {
+  margin: 2rem auto;
 }
 
 .post :global(.tweet) {
