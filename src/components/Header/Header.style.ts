@@ -1,3 +1,4 @@
+import { Tabs } from 'antd'
 import styled from 'styled-components'
 
 export const StyledHeader = styled.div`
@@ -11,4 +12,16 @@ export const StyledHeader = styled.div`
 
 export const StyledLink = styled.div`
   color: black;
+`
+
+export const StyledTabs = styled(Tabs)`
+  &&& {
+    .ant-tabs-tab {
+      padding: 0;
+
+      & .ant-tabs-tab-btn {
+        padding: 8px 16px;
+      }
+    }
+  }
 `

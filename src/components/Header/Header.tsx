@@ -1,8 +1,6 @@
-import { Tabs } from 'antd'
 import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { StyledHeader, StyledLink } from './Header.style'
+import { StyledHeader, StyledLink, StyledTabs } from './Header.style'
 import Script from 'next/script'
 
 const navItems = {
@@ -11,7 +9,7 @@ const navItems = {
 }
 
 const Header = () => {
-  const { pathname } = useRouter()
+  const { pathname, push } = useRouter()
   const titlePre = navItems[pathname]
   const titleText = titlePre ? `${titlePre} | Shanpig` : 'Shanpig'
 
@@ -42,18 +40,15 @@ const Header = () => {
         <meta property="og:image" content="/og-image.png" />
       </Head>
       <StyledHeader>
-        <Tabs
+        <StyledTabs
           type="card"
+          activeKey={pathname}
+          onTabClick={(page) => push(page)}
           items={Object.entries(navItems).map(([page, label]) => ({
-            label: (
-              <Link key={label} href={page}>
-                <StyledLink>{label}</StyledLink>
-              </Link>
-            ),
+            label: <StyledLink>{label}</StyledLink>,
             key: page,
-            active: pathname === page,
           }))}
-        ></Tabs>
+        ></StyledTabs>
       </StyledHeader>
     </header>
   )
