@@ -42,11 +42,11 @@ const Header = () => {
       <StyledHeader>
         <StyledTabs
           type="card"
-          activeKey={pathname}
           onTabClick={(page) => push(page)}
           items={Object.entries(navItems).map(([page, label]) => ({
             label: <StyledLink>{label}</StyledLink>,
             key: page,
+            active: pathname.includes(page),
           }))}
         ></StyledTabs>
       </StyledHeader>
