@@ -71,8 +71,8 @@ const Index = ({ posts = [], preview }) => {
           </div>
         )}
         <StyledPosts>
-          {posts.map((post) => (
-            <Post post={post} />
+          {posts.map((post, index) => (
+            <Post key={index} post={post} />
           ))}
         </StyledPosts>
       </div>
