@@ -88,7 +88,7 @@ export const TECH_ARTICLES = [
   },
   {
     title:
-      '輕鬆架起設計與工程的橋樑 — design tokens 同步自動化 via figma tokens & style-dictionary',
+      'Design systen 基礎建設：自動化同步 Figma tokens via Style-Dictionary',
     url:
       'https://medium.com/@shanpigliao/輕鬆架起設計與工程的橋樑-design-tokens-同步自動化-via-figma-tokens-style-dictionary-17b541f9138f',
   },
