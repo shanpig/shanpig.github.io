@@ -86,4 +86,10 @@ export const TECH_ARTICLES = [
     url:
       'https://medium.com/appworks-school/appworks-school-%E5%9F%B9%E8%A8%93-%E8%BB%9F%E9%AB%94%E7%95%8C%E7%9A%84%E5%85%A5%E9%96%80%E7%A5%A8-batch-13-front-end-class-fb648b5ac9d0',
   },
+  {
+    title:
+      '輕鬆架起設計與工程的橋樑 — design tokens 同步自動化 via figma tokens & style-dictionary',
+    url:
+      'https://medium.com/@shanpigliao/輕鬆架起設計與工程的橋樑-design-tokens-同步自動化-via-figma-tokens-style-dictionary-17b541f9138f',
+  },
 ]
