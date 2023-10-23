@@ -6,13 +6,20 @@ import {
 } from '@ant-design/icons'
 import { Card, Col, List, Row } from 'antd'
 import SectionTitle from '../components/SectionTItle/SectionTitle'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
 import { StyledCardBody, StyledContent, StyledIcon } from './AboutMe.style'
+
+dayjs.extend(relativeTime)
+
+const hahowStartingDate = dayjs('2021/8/15')
+const duration = hahowStartingDate.from(dayjs(), true)
 
 const INTRO = [
   {
     icon: <CalendarOutlined />,
-    content: '1.5 years building B2B service platform for 100k+ users.',
+    content: `${duration} building B2B service platform for over 100k+ users.`,
   },
   {
     icon: <ThunderboltOutlined />,
