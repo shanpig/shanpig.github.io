@@ -53,6 +53,12 @@ export const TECH_TALKS = [
     url:
       'https://docs.google.com/presentation/d/1w3E8dKohrcDg_oqhq9UGDSTx7gWwqVrtdvpovcD45hI/edit?usp=sharing',
   },
+  {
+    title: 'Brief Intro of Astro framework',
+    coverImage: '/portfolio/astro.png',
+    url:
+      'https://docs.google.com/presentation/d/1vtXoQYX4Z8Vu6w0GIHQRkWzi9UEB0tdiJOky6Bh4Ctc/edit?usp=sharing',
+  },
 ]
 
 export const TECH_ARTICLES = [
